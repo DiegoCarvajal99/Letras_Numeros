@@ -22,12 +22,13 @@ function setA1() {
     lblLetras.innerHTML = "A";
     grupoLetras = "A";
   } else {
+    if (grupoLetras === "ABCDEFGHIJ") {
+      lblNumeros.innerHTML = "1";
+      grupoNumeros = "1";
+    } else {
+    }
   }
-  if (grupoLetras === "ABCDEFGHIJ") {
-    lblNumeros.innerHTML = "1";
-    grupoNumeros = grupoLetras + "1";
-  } else {
-  }
+ 
 }
 
 function setB2() {
@@ -36,14 +37,18 @@ function setB2() {
     grupoLetras += "B";
     
   } else {
-   alert("Faltan letras");
+    if(grupoNumeros === ""){
+      alert("Faltan letras");
+    }else{
+      if (grupoNumeros === "1" && grupoLetras === "ABCDEFGHIJ"){
+        lblNumeros.innerHTML = "12";
+        grupoNumeros += "2";
+      } else {
+        alert("Faltan numeros");
+      }
+    }
   }
-  if (grupoNumeros === "1") {
-    lblNumeros.innerHTML = "12";
-    grupoNumeros += "2";
-  } else {
-    alert("Faltan numeros");
-  }
+ 
 }
 
 function setC3() {
@@ -51,7 +56,16 @@ function setC3() {
     lblLetras.innerHTML = "ABC";
     grupoLetras += "C";
   } else {
-    alert("Faltan letras");
+    if(grupoNumeros === ""){
+      alert("Faltan letras");
+    }else{
+      if (grupoNumeros === "12" && grupoLetras === "ABCDEFGHIJ"){
+        lblNumeros.innerHTML = "123";
+        grupoNumeros += "3";
+      } else {
+        alert("Faltan numeros");
+      }
+    }
   }
 }
 
@@ -60,7 +74,16 @@ function setD4() {
     lblLetras.innerHTML = "ABCD";
     grupoLetras += "D";
   } else {
-    alert("Faltan letras");
+    if(grupoNumeros === ""){
+      alert("Faltan letras");
+    }else{
+      if (grupoNumeros === "123" && grupoLetras === "ABCDEFGHIJ"){
+        lblNumeros.innerHTML = "1234";
+        grupoNumeros += "4";
+      } else {
+        alert("Faltan numeros");
+      }
+    }
   }
 }
 
@@ -69,7 +92,16 @@ function setE5() {
     lblLetras.innerHTML = "ABCDE";
     grupoLetras += "E";
   } else {
-    alert("Faltan letras");
+    if(grupoNumeros === ""){
+      alert("Faltan letras");
+    }else{
+      if (grupoNumeros === "1234" && grupoLetras === "ABCDEFGHIJ"){
+        lblNumeros.innerHTML = "12345";
+        grupoNumeros += "5";
+      } else {
+        alert("Faltan numeros");
+      }
+    }
   }
 }
 
@@ -78,7 +110,16 @@ function setF6() {
     lblLetras.innerHTML = "ABCDEF";
     grupoLetras += "F";
   } else {
-    alert("Faltan letras");
+    if(grupoNumeros === ""){
+      alert("Faltan letras");
+    }else{
+      if (grupoNumeros === "12345" && grupoLetras === "ABCDEFGHIJ"){
+        lblNumeros.innerHTML = "123456";
+        grupoNumeros += "6";
+      } else {
+        alert("Faltan numeros");
+      }
+    }
   }
 }
 
@@ -87,7 +128,16 @@ function setG7() {
     lblLetras.innerHTML = "ABCDEFG";
     grupoLetras += "G";
   } else {
-    alert("Faltan letras");
+    if(grupoNumeros === ""){
+      alert("Faltan letras");
+    }else{
+      if (grupoNumeros === "123456" && grupoLetras === "ABCDEFGHIJ"){
+        lblNumeros.innerHTML = "1234567";
+        grupoNumeros += "7";
+      } else {
+        alert("Faltan numeros");
+      }
+    }
   }
 }
 
@@ -95,8 +145,17 @@ function setH8() {
   if (grupoLetras === "ABCDEFG") {
     lblLetras.innerHTML = "ABCDEFGH";
     grupoLetras += "H";
-  } else {
-    alert("Faltan letras");
+  }else {
+    if(grupoNumeros === ""){
+      alert("Faltan letras");
+    }else{
+      if (grupoNumeros === "1234567" && grupoLetras === "ABCDEFGHIJ"){
+        lblNumeros.innerHTML = "12345678";
+        grupoNumeros += "8";
+      } else {
+        alert("Faltan numeros");
+      }
+    }
   }
 }
 
@@ -105,7 +164,16 @@ function setI9() {
     lblLetras.innerHTML = "ABCDEFGHI";
     grupoLetras += "I";
   } else {
-    alert("Faltan letras");
+    if(grupoNumeros === ""){
+      alert("Faltan letras");
+    }else{
+      if (grupoNumeros === "12345678" && grupoLetras === "ABCDEFGHIJ"){
+        lblNumeros.innerHTML = "123456789";
+        grupoNumeros += "9";
+      } else {
+        alert("Faltan numeros");
+      }
+    }
   }
 }
 
@@ -114,7 +182,30 @@ function setJ0() {
     lblLetras.innerHTML = "ABCDEFGHIJ";
     grupoLetras += "J";
   } else {
-    alert("Faltan letras");
+    if(grupoNumeros === ""){
+      alert("Faltan letras");
+    }else{
+      if (grupoNumeros === "123456789" && grupoLetras === "ABCDEFGHIJ"){
+        lblNumeros.innerHTML = "1234567890";
+        grupoNumeros += "0";
+      } else {
+        alert("Faltan numeros");
+      }
+    }
+  }
+}
+
+function setCL(){
+  if(grupoLetras === "ABCDEFGHIJ"){
+    lblLetras.innerHTML = "";
+    grupoLetras = "";
+  }
+}
+
+function setCN(){
+  if(grupoNumeros === "1234567890"){
+    lblNumeros.innerHTML = "";
+    grupoNumeros = "";
   }
 }
 
@@ -157,3 +248,11 @@ btnI9.onclick = function () {
 btnJ0.onclick = function () {
   setJ0();
 };
+
+btnCl.onclick = function(){
+  setCL();
+}
+
+btnCn.onclick = function(){
+  setCN();
+}
